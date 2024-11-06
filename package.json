@@ -1,0 +1,23 @@
+{
+  "name": "add-number-string-with-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhilasha-Thakur-26/add-number-string-with-tdd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhilasha-Thakur-26/add-number-string-with-tdd/issues"
+  },
+  "homepage": "https://github.com/Abhilasha-Thakur-26/add-number-string-with-tdd#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
