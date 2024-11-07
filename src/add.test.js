@@ -15,3 +15,10 @@ test('handles string of numbers having extra spcaces ahead of numbers',() =>{
 test('handles string of numbers having extra spcaces at the end of numbers',() =>{
     expect(add("5, 10 , 16 ")).toBe(31)
 })
+
+/*  Since the task description didn't mention
+    about entries which are not numbers I am taking it as edge 
+    case and for now I am filtering out entries which are NaN */
+test('handles entries which are not numbers ',()=>{
+    expect(add("5, 1 0, 16")).toBe(21)
+})
