@@ -1,5 +1,6 @@
 function add(numbers) {
-    const numArray = numbers.split(',')
+    const delimiterRegex = /[,;\n\r]+/;
+    const numArray = numbers.split(delimiterRegex)
     .map(num => {
         const parsedNum = Number(num.trim())
         return {num, parsedNum}

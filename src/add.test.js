@@ -19,7 +19,7 @@ test('handles string of numbers having extra spcaces at the end of numbers',() =
 
 /*  Since the task description didn't mention
     about entries which are not numbers I am taking it as edge 
-    case and for now I am throwing exceptions for entries which are NaN */
+    case and I am throwing exceptions for entries which are NaN */
 
 test('handles entries which are not numbers ',()=>{
     expect(() => {add("5, 1 0, 16")}).toThrow('Invalid inputs: 1 0')
@@ -38,4 +38,10 @@ test('throws exception for negative numbers ',()=>{
     //even if we change the position of both
     expect(() => { add("20, abc, -10, 0, 4") }).toThrow('Negative numbers not allowed: -10')
 
+})
+
+test('handles different delimeters',() =>{
+    expect(add("5, 10, 16")).toBe(31)
+    expect(add("5; 10; 16")).toBe(31)
+    expect(add("5; 10, 16")).toBe(31)
 })
