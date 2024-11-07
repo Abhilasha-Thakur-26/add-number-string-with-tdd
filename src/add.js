@@ -1,15 +1,14 @@
 
 function parseCustomDelimiter(numbers) {
-    const delimiterRegex = /^\/\/(.+?)\n/
+    const delimiterRegex = /^\/\/(\[.*?\]|\S+)\n/
     const customDelimiter = numbers.match(delimiterRegex)
     let delimiter = /[,;\n\r]+/
     
     if (customDelimiter) {
-        delimiter = customDelimiter[1]
+        delimiter = customDelimiter[1].replace(/\[|\]/g, '')
         numbers = numbers.slice(customDelimiter[0].length)
     }
-    
-    return { numbers, delimiter }
+    return { numbers: numbers.trim(), delimiter }
 }
 
 function validateNumbers(numbers, delimiter) {

@@ -77,6 +77,7 @@ describe('to test main string calculator function : add()',() => {
     test('throws exception for negative numbers ',()=>{
         expect(() => { add("20, 4, -10, 0") }).toThrow('Negative numbers not allowed: -10')
         expect(() => { add("9, 7, -2, -4")}).toThrow('Negative numbers not allowed: -2, -4')
+        expect(() => { add("-20, -4, -10") }).toThrow('Negative numbers not allowed: -20, -4, -10')
     })
     
     //for both NaN and negative numbers 
@@ -106,5 +107,13 @@ describe('to test main string calculator function : add()',() => {
     test('handles negative numbers with space after minus', () => {
         //since - 5 is not a valid negative number so I am treating it as an invalid input
         expect(()=>{add("- 5, 10, 20")}).toThrow("Invalid inputs: - 5")
+    })
+
+    test('handles multi-character custom delimiter', () => {
+        expect(add("//[***]\n1***2***3")).toBe(6)
+    })
+
+    test('handles multi-character custom delimiter', () => {
+        expect(add("//[***]\n")).toBe(0)
     })
 })
