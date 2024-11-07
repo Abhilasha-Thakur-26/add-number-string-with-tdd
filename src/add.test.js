@@ -98,4 +98,13 @@ describe('to test main string calculator function : add()',() => {
     test('handles different predefined delimeters',() =>{
         expect(add("//;\n1;2")).toBe(3)
     })
+
+    test('handles spaces around delimiters', () => {
+        expect(add("1,  2 ,3")).toBe(6)
+    })
+
+    test('handles negative numbers with space after minus', () => {
+        //since - 5 is not a valid negative number so I am treating it as an invalid input
+        expect(()=>{add("- 5, 10, 20")}).toThrow("Invalid inputs: - 5")
+    })
 })
